@@ -1,0 +1,8 @@
+.searchBar{
+    margin: 10px;
+    grid-area: searchBar;
+
+}
+.text{
+    width: 40%;
+}

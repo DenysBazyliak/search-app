@@ -1,0 +1,13 @@
+.main{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 2fr 8fr;
+    column-gap:10px;
+    grid-template-areas:
+            "searchBar searchBar"
+            "content content"
+;
+
+}

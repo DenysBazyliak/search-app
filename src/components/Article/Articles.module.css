@@ -1,0 +1,13 @@
+.content{
+    grid-area: content;
+
+}
+.wrapper{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+.highlighted{
+    background-color: yellow;
+}
