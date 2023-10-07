@@ -12,15 +12,23 @@ const HighlightedText: React.FC<HighlightedTextProps> = ({
   keywords,
 }) => {
   const highlightKeywords = (text: string, keywords: string) => {
-    const regex = new RegExp(keywords, "g");
+    const regex = new RegExp(keywords, "gi");
+    const matches = text.match(regex);
     const parts = text.split(regex);
-
-    return parts.map((part, index) => (
-      <React.Fragment key={index}>
-        {index !== 0 && <span className={style.highlighted}>{keywords}</span>}
-        {part}
-      </React.Fragment>
-    ));
+    return parts.map((part, index) => {
+      if (matches) {
+        return (
+          <React.Fragment key={index}>
+            {index !== 0 && (
+              <span className={style.highlighted}>{matches[index - 1]}</span>
+            )}
+            {part}
+          </React.Fragment>
+        );
+      } else {
+        return part;
+      }
+    });
   };
 
   return <div>{highlightKeywords(text, keywords)}</div>;
